@@ -1,0 +1,57 @@
+<form [formGroup]="submitQsResolver" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="exampleInputEmail1">What is your favourite color?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="color" formControlName="color" value="red">
+          <label class="form-check-label" >
+            red
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="color" name="color" value="green">
+          <label class="form-check-label">
+            green
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="color" name="color" value="blue">
+          <label class="form-check-label">
+            Blue
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="color" name="color" value="black">
+          <label class="form-check-label">
+            Black
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="color" name="color" value="none">
+          <label class="form-check-label">
+            none of above
+          </label>
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">What is her favourite fast food?</label>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="fastfood" formControlName="fastfood" value="burger">
+        <label class="form-check-label" >
+          burger
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="fastfood" name="fastfood" value="momo">
+        <label class="form-check-label">
+          Momo's
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" formControlName="fastfood" name="fastfood" value="none">
+        <label class="form-check-label">
+          none of above
+        </label>
+      </div>
+  </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
