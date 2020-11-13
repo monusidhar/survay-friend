@@ -31,7 +31,7 @@ a:active .titlename{
     color: #fff;
     text-decoration: none;
 }
-input:hover + a, input:focus + a, input:active + a{
+input[type=radio]:checked + a,input:hover + a, input:focus + a, input:active + a{
     border: 1px solid white;
     background-color: green;
     color: #fff;

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { Qs7Component } from './dashboard/qs7/qs7.component';
 import { Qs8Component } from './dashboard/qs8/qs8.component';
 import { Qs9Component } from './dashboard/qs9/qs9.component';
 import { Qs10Component } from './dashboard/qs10/qs10.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { Qs10Component } from './dashboard/qs10/qs10.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
