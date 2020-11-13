@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+.wrap-div{
+ float: left;
+ width: 100%;
+}
+a.card {
+    font-size: 18px;
+    color: orange;
+    text-transform: uppercase;
+}
+.titlename.text-center {
+    padding: 5px;
+    font-weight: 600;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+a{
+    cursor: pointer;
+    transition: 0.2s ease all;
+}
+a:hover, a:focus, a:active{
+    border: 1px solid white;
+    background-color: green;
+    color: #fff;
+    text-decoration: none!important;
+}
+a:hover .titlename, 
+a:focus .titlename,
+a:active .titlename{
+    color: #fff;
+    text-decoration: none;
+}
+input:hover + a, input:focus + a, input:active + a{
+    border: 1px solid white;
+    background-color: green;
+    color: #fff;
+    text-decoration: none!important;
+}

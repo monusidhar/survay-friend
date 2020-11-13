@@ -16,18 +16,15 @@ id: any;
 
   ngOnInit(): void {
     this.submitQs = new FormGroup({
-      color: new FormControl(null, Validators.required),
-      fastfood: new FormControl(null, Validators.required)
+      liquid: new FormControl(null, Validators.required)
     })
   }
   onSubmit(){
     this.http.post('https://survay-561ab.firebaseio.com/generator.json' , this.submitQs.value).subscribe(res => {
       console.log(res);
       this.id= res.name;
-      debugger
-      this.generatorService.tockenReceiver(res.name);
-      debugger
-      this.router.navigate(['../success']);
+      this.generatorService.tockenReceiver(this.id);
+      // this.router.navigate(['../success']);
     }); 
   }
 }
