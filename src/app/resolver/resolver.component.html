@@ -1,4 +1,274 @@
-<form [formGroup]="submitQsResolver" (ngSubmit)="onSubmit()">
+<div class="container text-center">
+  <form [formGroup]="submitQsResolver" (ngSubmit)="onSubmit()">
+    <div class="qus1"  *ngIf="qs1">
+      <h2>What do you prefer?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="liquid" name="liquid" value="tea" (click)="onclickAnswere()">
+          <a class="wrap-div card">
+            <img src="../../../assets/creater/tea.jpg">
+            <div class="titlename">
+              Tea
+            </div>
+          </a>
+        </div>
+        <div class="col-6">
+          <input class="form-check-input" type="radio" name="liquid" formControlName="liquid" value="coffee" (click)="onclickAnswere()">
+          <a class="wrap-div card">
+            <img src="../../../assets/creater/Coffee.jpg">
+            <div class="titlename">
+              Coffee
+            </div>
+          </a>
+        </div>
+      </div>
+      <button class="btn btn-primary m-2" (click)="qus1()"> Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus1()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus1()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus2" *ngIf="qs2">
+      <h2>Do you love school life or college life?</h2>
+      <div class="row mb-20">
+          <div class="col-6">
+            <input class="form-check-input" type="radio" formControlName="life" name="life" value="school" (click)="onclickAnswere()">
+            <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/School-Life.jpg">
+                <div class="titlename">
+                    School life
+                </div>
+            </a>
+        </div>
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="life" name="life" value="college" (click)="onclickAnswere()">
+            <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/collage-life.jpg">
+                <div class="titlename">
+                    college life
+                </div>
+            </a>
+        </div>
+      </div>
+      <button class="btn btn-primary m-2" (click)="qus2()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus2()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus2()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus3" *ngIf="qs3">
+      <h2>Which one will you choose?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="place" name="place" value="beach" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+              <img src="../../../assets/creater/Beaches.jpg">
+              <div class="titlename">
+                  beach 
+              </div>
+          </a>
+      </div>
+      <div class="col-6">
+        <input class="form-check-input" type="radio" formControlName="place" name="place" value="mountains" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+              <img src="../../../assets/creater/Mountains.jpg">
+              <div class="titlename">
+                  mountains
+              </div>
+          </a>
+      </div>
+      </div>
+      <button class="btn btn-primary m-2" (click)="qus3()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus3()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus3()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus4" *ngIf="qs4">
+      <h2>Which one do you like?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="taste" name="taste" value="sweet" (click)="onclickAnswere()">
+                <a routerLink="" class="wrap-div card">
+                    <img src="../../../assets/creater/Sweet.jpg">
+                    <div class="titlename">
+                        Sweet 
+                    </div>
+                </a>
+
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="taste" name="taste" value="spicy" (click)="onclickAnswere()">
+                <a routerLink="" class="wrap-div card">
+                    <img src="../../../assets/creater/Spicy.jpg">
+                    <div class="titlename">
+                        Spicy
+                    </div>
+                </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus4()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus4()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus4()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus5" *ngIf="qs5">
+      <h2>What is more important to you?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="important" name="important" value="love" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                  <img src="../../../assets/creater/Love.jpg">
+                  <div class="titlename">
+                      love 
+                  </div>
+              </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="important" name="important" value="money" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                  <img src="../../../assets/creater/Money.jpg">
+                  <div class="titlename">
+                      money
+                  </div>
+              </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus5()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus5()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus5()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus6" *ngIf="qs6">
+      <h2>What do you prefer: credit card or cash?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="prefer" name="prefer" value="Credit-card" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                  <img src="../../../assets/creater/Credit-card.jpg">
+                  <div class="titlename">
+                      credit card
+                  </div>
+              </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="prefer" name="prefer" value="cash" (click)="onclickAnswere()">
+                <a routerLink="" class="wrap-div card">
+                    <img src="../../../assets/creater/Cash.jpg">
+                    <div class="titlename">
+                        cash
+                    </div>
+                </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus6()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus6()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus6()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus7" *ngIf="qs7">
+      <h2>What kind of hair do you like?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="hair" name="hair" value="short" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+            <img src="../../../assets/creater/Short-hair.jpg">
+            <div class="titlename">
+                short hair
+            </div>
+        </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="hair" name="hair" value="long" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/Long-hair.jpg">
+                <div class="titlename">
+                    long hair
+                </div>
+            </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus7()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus7()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus7()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus8" *ngIf="qs8">
+      <h2>Which type of shopping do you like?</h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="mode" name="mode" value="online" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+            <img src="../../../assets/creater/Online-Shopping2.jpg">
+            <div class="titlename">
+                online
+            </div>
+        </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="mode" name="mode" value="traditiona" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/Physical-Shopping.jpg">
+                <div class="titlename">
+                    traditional
+                </div>
+            </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus8()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus8()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus8()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus9" *ngIf="qs9">
+      <h2>Which time do you like?
+      </h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="time" name="time" value="day" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+            <img src="../../../assets/creater/Morning-person.jpg">
+            <div class="titlename">
+                Day
+            </div>
+        </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="time" name="time" value="night" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/Night-Owl.jpg">
+                <div class="titlename">
+                    night
+                </div>
+            </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" (click)="qus9()" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" (click)="qus9()" *ngIf="readyToSubmit">Submit & Next</button>
+      <button class="btn btn-primary m-2" (click)="qus9()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
+    </div>
+    <div class="qus10" *ngIf="qs10">
+      <h2>What would you choose?
+      </h2>
+      <div class="row mb-20">
+        <div class="col-6">
+          <input class="form-check-input" type="radio" formControlName="flower" name="flower" value="rose" (click)="onclickAnswere()">
+          <a routerLink="" class="wrap-div card">
+            <img src="../../../assets/creater/Rose.jpg">
+            <div class="titlename">
+                rose
+            </div>
+        </a>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" formControlName="flower" name="flower" value="lily" (click)="onclickAnswere()">
+              <a routerLink="" class="wrap-div card">
+                <img src="../../../assets/creater/Lily.jpg">
+                <div class="titlename">
+                      lily
+                </div>
+            </a>
+            </div>
+        </div>
+      <button class="btn btn-primary m-2" type="submit" >Skip This uestion</button>
+      <button class="btn btn-primary m-2" type="submit" *ngIf="readyToSubmit">Submit</button>
+      <button class="btn btn-primary m-2" type="submit"  disabled *ngIf="!readyToSubmit">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- <form [formGroup]="submitQsResolver" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="exampleInputEmail1">What is your favourite color?</label>
         <div class="form-check">
@@ -54,4 +324,4 @@
       </div>
   </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</form> -->
