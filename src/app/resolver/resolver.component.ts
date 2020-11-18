@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import { GeneratorService } from '../services/generator.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-resolver',
@@ -25,7 +26,7 @@ readyToSubmit:boolean=false;
   // constructor(private http: HttpClient, private router : Router, private generatorService:GeneratorService) {
   //  }      
   submitQsResolver: FormGroup
-  constructor(private http: HttpClient, private generatorService: GeneratorService) { }
+  constructor(private http: HttpClient, private generatorService: GeneratorService, private route:ActivatedRoute) { }
   qs: any;
   id:any;
   count:number=0;
@@ -44,8 +45,8 @@ readyToSubmit:boolean=false;
       time: new FormControl(null, Validators.required),
       flower: new FormControl(null, Validators.required)
     });
-    this.qs=this.getQuestions();
     this.getTocken();
+    this.qs=this.getQuestions();
     this.matchQustion();
     console.log(this.id);
     debugger;
@@ -116,15 +117,18 @@ readyToSubmit:boolean=false;
   // }
 
   getTocken(){
-    this.generatorService.token.subscribe(id=>{
-      this.id= id;
-    })
+    // this.generatorService.token.subscribe(id=>{
+    //   this.id= id;
+    //   debugger
+    // })
+    this.id=this.route.snapshot.queryParams;
   }
 
   matchQustion(){
     this.qs.subscribe(res=>{
       for(const elment in res){
         if(this.id == res[elment].id){
+          debugger
           this.liveObj.liquid=res[elment].liquid;
           this.liveObj.life=res[elment].life;
           this.liveObj.place=res[elment].place;
@@ -137,6 +141,7 @@ readyToSubmit:boolean=false;
           this.liveObj.flower=res[elment].flower;
         }
       }
+      debugger
     });
   }
   onSubmit(){

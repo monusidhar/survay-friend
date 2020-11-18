@@ -7,7 +7,10 @@
               <h5 class="card-title">Your Quiz is Ready!</h5>
               <p class="card-text">Share your quiz-link with your friends!</p>
               <p class="card-text">They will try to guess your answers & get a score out of 10.</p>
-              <button class="btn btn-primary" routerLink="../resolver">Copy Link</button>
+              <input type="text" value="http://localhost:4200/resolver?id={{id}}&username={{username}}" #userinput>
+              <button (click)="copyInputMessage(userinput)" value="click to copy" >Copy from Textbox</button>
+              <!-- <button class="btn btn-primary" routerLink="../resolver">Copy Link</button> -->
         </div>
     </div>
 </div>
+

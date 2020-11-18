@@ -3,11 +3,11 @@
         <h4>Who Is Your True Friend? Let’s Find Out!</h4>
         <p>Guidelines:</p>
         <img src="../../assets/InstructEnglishMe.png">
-        <!-- <form>-->
+        <form [formGroup]="submitName" (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <input type="text" name="name">
+                <input type="text" name="name" formControlName="name">
             </div>
-            <button routerLink="../qs1" class="btn btn-primary">Play</button>
-        <!-- </form> -->
+            <button type="submit" class="btn btn-primary">Play</button>
+        </form>
     </div>
 </div>

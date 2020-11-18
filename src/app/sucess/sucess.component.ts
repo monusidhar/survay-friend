@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { GeneratorService } from '../services/generator.service';
 
 @Component({
@@ -8,16 +8,22 @@ import { GeneratorService } from '../services/generator.service';
 })
 export class SucessComponent implements OnInit {
   id: any;
+  username: any;
   constructor(private generatorService: GeneratorService) { }
 
   ngOnInit(): void {
-    this.generatorService.token.subscribe(res => {
-      this.id= res;
-      debugger
-      console.log('this is id'+res);
-      debugger
+    this.generatorService.username.subscribe(res=>{
+      this.username=res.name;
+      console.log('this is username'+ res.name);
     });
-    debugger
+    this.generatorService.token.subscribe(res => {  
+      this.id= res;
+      console.log('this is id'+res);
+    });
   }
-
+  copyInputMessage(inputElement){
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
+  }
 }
