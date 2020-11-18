@@ -8,25 +8,22 @@ import { GeneratorService } from '../services/generator.service';
 })
 export class SucessComponent implements OnInit {
   id: any;
+  username: string;
   constructor(private generatorService: GeneratorService) { }
 
   ngOnInit(): void {
+    // this.generatorService.username.subscribe(res => {
+      
+    // });
+    this.generatorService.username.subscribe(res=>{this.username=res});
     this.generatorService.token.subscribe(res => {
       this.id= res;
       console.log('this is id'+res);
     });
   }
-  copyMessage(val: string){
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = val;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
+  copyInputMessage(inputElement){
+    inputElement.select();
     document.execCommand('copy');
-    document.body.removeChild(selBox);
+    inputElement.setSelectionRange(0, 0);
   }
 }

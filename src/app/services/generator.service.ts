@@ -5,6 +5,7 @@ import { Subject, BehaviorSubject } from 'rxjs';
 })
 export class GeneratorService {
    public token= new BehaviorSubject<any>('');
+   public username= new BehaviorSubject<any>('');
 
     tockenReceiver(token:any){
         this.token.next(token);
