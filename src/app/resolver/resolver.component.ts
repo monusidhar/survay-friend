@@ -29,6 +29,7 @@ readyToSubmit:boolean=false;
   constructor(private http: HttpClient, private generatorService: GeneratorService, private route:ActivatedRoute) { }
   qs: any;
   id:any;
+  username: any;
   count:number=0;
   liveObj:any={};
 
@@ -45,11 +46,14 @@ readyToSubmit:boolean=false;
       time: new FormControl(null, Validators.required),
       flower: new FormControl(null, Validators.required)
     });
-    this.getTocken();
+    this.getuerDetail();
     this.qs=this.getQuestions();
     this.matchQustion();
     console.log(this.id);
-    debugger;
+  }
+  getuerDetail(){
+    this.id= this.route.snapshot.queryParams.id;
+    this.username= this.route.snapshot.queryParams.username;
   }
 
   qus1(){
@@ -113,7 +117,7 @@ readyToSubmit:boolean=false;
   //     fastfood: new FormControl(null, Validators.required)
   //   })
 
- 
+
   // }
 
   getTocken(){
@@ -121,7 +125,8 @@ readyToSubmit:boolean=false;
     //   this.id= id;
     //   debugger
     // })
-    this.id=this.route.snapshot.queryParams;
+  return this.route.snapshot.queryParams.id;
+   
   }
 
   matchQustion(){

@@ -1,7 +1,7 @@
 <div class="container text-center">
   <form [formGroup]="submitQsResolver" (ngSubmit)="onSubmit()">
     <div class="qus1"  *ngIf="qs1">
-      <h2>What do you prefer?</h2>
+      <h2>What do {{username}}'s prefer?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="liquid" name="liquid" value="tea" (click)="onclickAnswere()">
@@ -27,7 +27,7 @@
       <button class="btn btn-primary m-2" (click)="qus1()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus2" *ngIf="qs2">
-      <h2>Do you love school life or college life?</h2>
+      <h2>Does {{username}} love school life or college life?</h2>
       <div class="row mb-20">
           <div class="col-6">
             <input class="form-check-input" type="radio" formControlName="life" name="life" value="school" (click)="onclickAnswere()">
@@ -53,7 +53,7 @@
       <button class="btn btn-primary m-2" (click)="qus2()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus3" *ngIf="qs3">
-      <h2>Which one will you choose?</h2>
+      <h2>Which one will {{username}} choose?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="place" name="place" value="beach" (click)="onclickAnswere()">
@@ -79,7 +79,7 @@
       <button class="btn btn-primary m-2" (click)="qus3()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus4" *ngIf="qs4">
-      <h2>Which one do you like?</h2>
+      <h2>Which one does {{username}} like?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="taste" name="taste" value="sweet" (click)="onclickAnswere()">
@@ -106,7 +106,7 @@
       <button class="btn btn-primary m-2" (click)="qus4()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus5" *ngIf="qs5">
-      <h2>What is more important to you?</h2>
+      <h2>What is more important to {{username}}?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="important" name="important" value="love" (click)="onclickAnswere()">
@@ -132,7 +132,7 @@
       <button class="btn btn-primary m-2" (click)="qus5()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus6" *ngIf="qs6">
-      <h2>What do you prefer: credit card or cash?</h2>
+      <h2>What does {{username}} prefer: credit card or cash?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="prefer" name="prefer" value="Credit-card" (click)="onclickAnswere()">
@@ -158,7 +158,7 @@
       <button class="btn btn-primary m-2" (click)="qus6()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus7" *ngIf="qs7">
-      <h2>What kind of hair do you like?</h2>
+      <h2>What kind of hair does {{username}} like?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="hair" name="hair" value="short" (click)="onclickAnswere()">
@@ -184,7 +184,7 @@
       <button class="btn btn-primary m-2" (click)="qus7()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus8" *ngIf="qs8">
-      <h2>Which type of shopping do you like?</h2>
+      <h2>Which type of shopping does {{username}} like?</h2>
       <div class="row mb-20">
         <div class="col-6">
           <input class="form-check-input" type="radio" formControlName="mode" name="mode" value="online" (click)="onclickAnswere()">
@@ -210,7 +210,7 @@
       <button class="btn btn-primary m-2" (click)="qus8()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus9" *ngIf="qs9">
-      <h2>Which time do you like?
+      <h2>Which time does {{username}} like?
       </h2>
       <div class="row mb-20">
         <div class="col-6">
@@ -237,7 +237,7 @@
       <button class="btn btn-primary m-2" (click)="qus9()" disabled *ngIf="!readyToSubmit">Submit & Next</button>
     </div>
     <div class="qus10" *ngIf="qs10">
-      <h2>What would you choose?
+      <h2>What would {{username}} choose?
       </h2>
       <div class="row mb-20">
         <div class="col-6">
