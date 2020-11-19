@@ -11,7 +11,7 @@ import { GeneratorService } from '../services/generator.service';
 })
 export class DashboardComponent implements OnInit {
 submitQs: FormGroup;
-id: any;
+response= {};
 qs1:boolean=true;
 qs2=false;
 qs3=false;
@@ -84,10 +84,10 @@ readyToSubmit:boolean=false;
     console.log("i m onclickAnswere"+ this.qs1);
   }
   onSubmit(){
-    this.http.post('https://survay-561ab.firebaseio.com/generator.json' , this.submitQs.value).subscribe(res => {
+    this.http.post('https://survay-561ab.firebaseio.com/generator.json' , this.submitQs.value).subscribe(response => {
       console.log(this.submitQs.value);
-      this.id= res.name;
-      this.generatorService.tockenReceiver(this.id);
+      this.response= response;
+      this.generatorService.tockenReceiver(this.response);
        this.router.navigate(['../success']);
     }); 
   }

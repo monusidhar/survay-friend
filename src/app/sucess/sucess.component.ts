@@ -17,7 +17,7 @@ export class SucessComponent implements OnInit {
       console.log('this is username'+ res.name);
     });
     this.generatorService.token.subscribe(res => {  
-      this.id= res;
+      this.id= res.name;
       console.log('this is id'+res);
     });
   }
