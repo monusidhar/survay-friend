@@ -133,7 +133,6 @@ readyToSubmit:boolean=false;
     this.qs.subscribe(res=>{
       for(const elment in res){
         if(this.id == res[elment].id){
-          debugger
           this.liveObj.liquid=res[elment].liquid;
           this.liveObj.life=res[elment].life;
           this.liveObj.place=res[elment].place;
@@ -180,7 +179,14 @@ readyToSubmit:boolean=false;
     if(this.submitQsResolver.get('flower').value == this.liveObj.flower){
       this.count=this.count+1;
     }
-    console.log("your score is"+this.count);
+    if (this.count > 7){
+      alert('you are best friend of '+this.username);
+    }
+    if (this.count > 5){
+      alert('you are good friend of '+this.username);
+    } else{
+      alert('you are just friend of '+this.username);
+    }
   }
 
   getQuestions(){
