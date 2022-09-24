@@ -84,7 +84,7 @@ readyToSubmit:boolean=false;
     console.log("i m onclickAnswere"+ this.qs1);
   }
   onSubmit(){
-    this.http.post('https://survay-561ab.firebaseio.com/generator.json' , this.submitQs.value).subscribe(res => {
+    this.http.post('https://survay-561ab.firebaseio.com/generator.json' , this.submitQs.value).subscribe((res:any) => {
       console.log(this.submitQs.value);
       this.id= res.name;
       this.generatorService.tockenReceiver(this.id);
